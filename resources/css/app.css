@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+/* 2. BARU DIREKTIF @THEME TAILWIND V4 */
+@theme {
+  /* ── Color Palette ── */
+  --color-background: #f7f9fb;
+  --color-surface: #ffffff;
+  --color-surface-secondary: #f2f4f6;
+  --color-surface-dim: #d8dadc;
+  --color-surface-container: #eceef0;
+  --color-surface-container-high: #e6e8ea;
+
+  --color-primary: #2563eb;
+  --color-primary-light: #eff6ff;
+  --color-primary-hover: #1e40af;
+  --color-primary-container: #dbe1ff;
+  --color-on-primary: #ffffff;
+
+  --color-secondary: #585f67;
+  --color-secondary-light: #f5f3ff;
+  --color-secondary-container: #dce3ec;
+
+  --color-accent: #8b5cf6;
+  --color-accent-light: #f5f3ff;
+
+  --color-success: #16a34a;
+  --color-success-light: #dcfce7;
+  --color-success-dark: #166534;
+  --color-warning: #f59e0b;
+  --color-warning-light: #fef3c7;
+  --color-danger: #ba1a1a;
+  --color-danger-light: #ffdad6;
+  --color-danger-dark: #93000a;
+
+  --color-heading: #111827;
+  --color-body: #4b5563;
+  --color-muted: #737686;
+
+  --color-border: #e5e7eb;
+  --color-outline: #737686;
+  --color-outline-variant: #c3c6d7;
+
+  --color-inverse-surface: #2d3133;
+  --color-inverse-on-surface: #eff1f3;
+
+  /* ── Shadows ── */
+  --shadow-card: 0 4px 12px rgba(37, 99, 235, 0.04);
+  --shadow-card-hover: 0 8px 24px rgba(37, 99, 235, 0.08);
+  --shadow-modal: 0 20px 40px rgba(37, 99, 235, 0.12);
+
+  /* ── Spacing ── */
+  --spacing-container-max: 1280px;
+  --spacing-sidebar: 260px;
+  --spacing-gutter: 1.5rem;
+
+  /* ── Font Family ── */
+  --font-heading: 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+/*
+|--------------------------------------------------------------------------
+| ROLE-BASED THEME OVERRIDES
+|--------------------------------------------------------------------------
+*/
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ * USER THEME — "Royal Estate Systems" (Royal Blue)
+ * Brand: Premium Property Marketplace, trust-centric, sophisticated
+ * Primary: Royal Blue #2563EB
+ * ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.theme-user,
+[data-theme='user'] {
+  --color-background: #f7f9fb;
+  --color-surface: #ffffff;
+  --color-surface-secondary: #f2f4f6;
+  --color-surface-dim: #d8dadc;
+  --color-surface-container: #eceef0;
+  --color-surface-container-high: #e6e8ea;
+
+  --color-primary: #2563eb;
+  --color-primary-light: #eff6ff;
+  --color-primary-hover: #1e40af;
+  --color-primary-container: #dbe1ff;
+  --color-on-primary: #ffffff;
+
+  --color-secondary: #585f67;
+  --color-secondary-light: #f0f4f8;
+  --color-secondary-container: #dce3ec;
+
+  --color-accent: #2c4bb9;
+  --color-accent-light: #eff0ff;
+
+  --color-heading: #111827;
+  --color-body: #4b5563;
+  --color-muted: #737686;
+
+  --color-border: #e5e7eb;
+  --color-outline: #737686;
+  --color-outline-variant: #c3c6d7;
+
+  --shadow-card: 0 4px 12px rgba(37, 99, 235, 0.04);
+  --shadow-card-hover: 0 8px 24px rgba(37, 99, 235, 0.08);
+  --shadow-modal: 0 20px 40px rgba(37, 99, 235, 0.12);
+
+  --font-heading: 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ * OWNER THEME — "Verified Kost Owner" (Green / Growth)
+ * Brand: Growth, vitality, approachable professionalism
+ * Primary: Owner Green #16A34A
+ * ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.theme-owner,
+[data-theme='owner'] {
+  --color-background: #f7f9fb;
+  --color-surface: #ffffff;
+  --color-surface-secondary: #f2f4f6;
+  --color-surface-dim: #d8dadc;
+  --color-surface-container: #eceef0;
+  --color-surface-container-high: #e6e8ea;
+
+  --color-primary: #16a34a;
+  --color-primary-light: #ecfdf3;
+  --color-primary-hover: #15803d;
+  --color-primary-container: #dcfce7;
+  --color-on-primary: #ffffff;
+
+  --color-secondary: #2563eb;
+  --color-secondary-light: #eff6ff;
+  --color-secondary-container: #dbe1ff;
+
+  --color-accent: #2563eb;
+  --color-accent-light: #eff6ff;
+
+  --color-heading: #111827;
+  --color-body: #6b7280;
+  --color-muted: #6e7b6c;
+
+  --color-border: #e5e7eb;
+  --color-outline: #6e7b6c;
+  --color-outline-variant: #bdcaba;
+
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  --shadow-card-hover: 0 10px 15px -3px rgba(22, 163, 74, 0.05);
+  --shadow-modal: 0 20px 40px rgba(22, 163, 74, 0.1);
+
+  --font-heading: 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ * ADMIN THEME — "Verified Kost Admin" (Slate / Corporate)
+ * Brand: Sophisticated, precise, intelligence (with Purple AI accent)
+ * Primary: Slate 800 #1E293B
+ * ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.theme-admin,
+[data-theme='admin'] {
+  --color-background: #f1f5f9;
+  --color-surface: #ffffff;
+  --color-surface-secondary: #f1f5f9;
+  --color-surface-dim: #d6dade;
+  --color-surface-container: #eaeef2;
+  --color-surface-container-high: #e4e9ed;
+
+  --color-primary: #1e293b;
+  --color-primary-light: #f1f5f9;
+  --color-primary-hover: #0f172a;
+  --color-primary-container: #334155;
+  --color-on-primary: #ffffff;
+
+  --color-secondary: #8b5cf6;
+  --color-secondary-light: #f5f3ff;
+  --color-secondary-container: #e9ddff;
+
+  --color-accent: #8b5cf6;
+  --color-accent-light: #f5f3ff;
+
+  --color-heading: #0f172a;
+  --color-body: #334155;
+  --color-muted: #64748b;
+
+  --color-border: #e2e8f0;
+  --color-outline: #75777d;
+  --color-outline-variant: #c5c6cd;
+
+  --shadow-card: 0 1px 3px rgba(15, 23, 42, 0.04);
+  --shadow-card-hover: 0 4px 6px -1px rgba(15, 23, 42, 0.05);
+  --shadow-modal: 0 10px 15px -3px rgba(15, 23, 42, 0.1);
+
+  --font-heading: 'Hanken Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+/*
+|--------------------------------------------------------------------------
+| BASE STYLES
+|--------------------------------------------------------------------------
+*/
+html, body {
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+|--------------------------------------------------------------------------
+| UTILITY CLASSES — Theme-aware component styles
+|--------------------------------------------------------------------------
+| These use the CSS variables so they auto-adapt per role.
+|--------------------------------------------------------------------------
+*/
+
+/* ── Card ── */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.card:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* ── Stat Card ── */
+.stat-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+.stat-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-1px);
+}
+
+/* ── Badge Variants ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.125rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  letter-spacing: 0.02em;
+}
+.badge-primary {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+.badge-success {
+  background: var(--color-success-light);
+  color: var(--color-success-dark);
+}
+.badge-warning {
+  background: var(--color-warning-light);
+  color: #92400e;
+}
+.badge-danger {
+  background: var(--color-danger-light);
+  color: var(--color-danger-dark);
+}
+.badge-accent {
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+}
+.badge-neutral {
+  background: var(--color-surface-secondary);
+  color: var(--color-body);
+}
+
+/* ── Button Base ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  transition: all 0.15s ease;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+.btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+}
+.btn-secondary {
+  background: var(--color-surface);
+  color: var(--color-heading);
+  border: 1px solid var(--color-border);
+}
+.btn-secondary:hover:not(:disabled) {
+  background: var(--color-primary-light);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--color-body);
+}
+.btn-ghost:hover:not(:disabled) {
+  background: var(--color-surface-secondary);
+  color: var(--color-heading);
+}
+.btn-danger {
+  background: var(--color-danger);
+  color: #ffffff;
+}
+.btn-danger:hover:not(:disabled) {
+  opacity: 0.9;
+}
+.btn-accent {
+  background: var(--color-accent);
+  color: #ffffff;
+}
+.btn-accent:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+/* ── Input ── */
+.input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  background: var(--color-surface);
+  color: var(--color-heading);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 12%, transparent);
+  outline: none;
+}
+.input::placeholder {
+  color: var(--color-muted);
+}
+
+/* ── Sidebar Nav Active Indicator ── */
+.nav-active {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.nav-inactive {
+  color: var(--color-body);
+}
+.nav-inactive:hover {
+  background: var(--color-surface-secondary);
+  color: var(--color-heading);
+}
+
+/* ── Table ── */
+.table-header {
+  background: var(--color-surface-secondary);
+  border-bottom: 1px solid var(--color-border);
+}
+.table-header th {
+  padding: 0.75rem 1rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+.table-row {
+  border-bottom: 1px solid var(--color-surface-secondary);
+  transition: background 0.1s ease;
+}
+.table-row:hover {
+  background: var(--color-surface-secondary);
+}
+.table-row td {
+  padding: 1rem;
+  font-size: 0.875rem;
+  color: var(--color-body);
+}
+
+/* ── Heading Font (Admin uses Hanken Grotesk) ── */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+/* ── Smooth Page Transitions ── */
+.page-enter {
+  animation: fadeSlideIn 0.3s ease-out;
+}
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Scrollbar Styling ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-surface-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-outline-variant);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-outline);
+}

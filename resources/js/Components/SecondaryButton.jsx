@@ -1,0 +1,22 @@
+export default function SecondaryButton({
+    type = 'button',
+    className = '',
+    disabled,
+    children,
+    ...props
+}) {
+    return (
+        <button
+            {...props}
+            type={type}
+            className={
+                `btn btn-secondary text-xs uppercase tracking-widest ${
+                    disabled && 'opacity-25'
+                } ` + className
+            }
+            disabled={disabled}
+        >
+            {children}
+        </button>
+    );
+}
