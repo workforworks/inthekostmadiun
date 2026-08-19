@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Owner\SidebarManagementController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -35,7 +36,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
             Route::get('/dashboard', function () {
                 return Inertia::render('Owner/Dashboard');
             })->name('dashboard');
+            Route::get('/kost-saya', [SidebarManagementController::class, 'kostSaya'])->name('kost-saya'); 
+            Route::get('/tambah-kost', [SidebarManagementController::class, 'tambahKost'])->name('tambah-kost'); 
+            Route::get('/pusat-verifikasi', [SidebarManagementController::class, 'verifikasiCenter'])->name('pusat-verifikasi'); 
+            Route::get('/profil', [SidebarManagementController::class, 'profile'])->name('profil'); 
         });
+
+
 
     // 5. USER AREA (CLEAN URL - Tanpa Prefix URL "/user")
     Route::name('user.')

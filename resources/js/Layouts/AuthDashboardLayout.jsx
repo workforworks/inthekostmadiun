@@ -17,6 +17,10 @@ const roleConfig = {
         dashboard: 'owner.dashboard',
         menu: [
             { label: 'Dashboard', route: 'owner.dashboard', icon: 'dashboard' },
+            { label: 'Kost Saya', route: 'owner.kost-saya', icon: 'KostSayaIcon' },
+            { label: 'Tambah Kost', route: 'owner.tambah-kost', icon: 'TambahKostIcon' },
+            { label: 'Verifikasi', route: 'owner.pusat-verifikasi', icon: 'VerifyIcon' },
+            { label: 'Profil', route: 'owner.profil', icon: 'ProfileIcon' },
         ],
     },
     user: {
@@ -42,6 +46,35 @@ function Icon({ name, className = 'h-5 w-5' }) {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
             </svg>
         ),
+
+        // punya e owner
+        KostSayaIcon: (
+            <svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-door"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M14 12v.01" /><path d="M3 21h18" /><path d="M6 21v-16a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v16" /></svg>
+        ),
+        TambahKostIcon: (
+            <svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-home-plus">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M19 12h2l-9 -9l-9 9h2v7a2 2 0 0 0 2 2h5.5" />
+                <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2" />
+                <path d="M16 19h6" />
+                <path d="M19 16v6" />
+            </svg>
+        ),
+        VerifyIcon: (
+            <svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-file-check"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2" /><path d="M9 15l2 2l4 -4" /></svg>
+        ),
+        ProfileIcon: (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-user">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+            </svg>
+        ),
+
+
+
+        
+
     };
     return icons[name] ?? icons.dashboard;
 }
