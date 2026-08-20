@@ -25,6 +25,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
             Route::get('/dashboard', function () {
                 return Inertia::render('Admin/Dashboard');
             })->name('dashboard');
+
+            // SURVEYOR MANAGEMENT (SURVEY-005)
+            Route::patch('surveyors/{surveyor}/toggle-status', [\App\Http\Controllers\Admin\SurveyorController::class, 'toggleStatus'])->name('surveyors.toggle-status');
+            Route::resource('surveyors', \App\Http\Controllers\Admin\SurveyorController::class)->except(['create', 'edit', 'show']);
         });
 
     // 4. OWNER AREA (Memakai Prefix URL)
