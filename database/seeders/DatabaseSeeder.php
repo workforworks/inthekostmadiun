@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             UserSeeder::class,
             SurveyorSeeder::class,
+            SurveyChecklistSeeder::class,
             // FacilitySeeder::class,
             // SurveyPackageSeeder::class,
         ]);

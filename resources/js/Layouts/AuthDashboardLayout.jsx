@@ -11,6 +11,7 @@ const roleConfig = {
         menu: [
             { label: 'Dashboard', route: 'admin.dashboard', icon: 'dashboard' },
             { label: 'Surveyor', route: 'admin.surveyors.index', icon: 'users' },
+            { label: 'Checklist Survey', route: 'admin.survey-checklists.index', icon: 'checklist' },
         ],
     },
     owner: {
@@ -41,6 +42,11 @@ function Icon({ name, className = 'h-5 w-5' }) {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2" />
                 <circle cx="9" cy="7" r="4" />
                 <path strokeLinecap="round" strokeLinejoin="round" d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+            </svg>
+        ),
+        checklist: (
+            <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
             </svg>
         ),
     };
