@@ -14,6 +14,11 @@ use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
 use Inertia\Response;
 
+use App\Mail\UserRegisteredMail;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
+use Throwable;
+
 class RegisteredUserController extends Controller
 {
     /**
@@ -44,6 +49,15 @@ class RegisteredUserController extends Controller
         ]);
 
         event(new Registered($user));
+
+        try {
+            Mail::to($user->email)->send(new UserRegisteredMail($user));
+        } catch (Throwable $e) {
+            Log::error('Gagal mengirim email konfirmasi registrasi: '.$e->getMessage(), [
+                'user_id' => $user->id,
+                'email' => $user->email,
+            ]);
+        }
 
         Auth::login($user);
 

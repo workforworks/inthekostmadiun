@@ -24,12 +24,30 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-#[Fillable(['name', 'email', 'password'])]
+#[Fillable(['name', 'email', 'phone', 'role_id', 'status', 'password'])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
+
+    /**
+     * The "booted" method of the model.
+     */
+    protected static function booted(): void
+    {
+        static::creating(function (User $user) {
+            if (! $user->role_id) {
+                $user->role_id = Role::firstOrCreate(['name' => 'user'], ['description' => 'Calon penyewa'])->id;
+            }
+            if (! $user->phone) {
+                $user->phone = '08'.fake()->unique()->numerify('##########');
+            }
+            if (! $user->status) {
+                $user->status = 'active';
+            }
+        });
+    }
 
     /**
      * Get the attributes that should be cast.
@@ -52,5 +70,16 @@ class User extends Authenticatable
     public function hasRole(string $role): bool
     {
         return $this->role?->name === $role;
+    }
+
+    /**
+     * Send the password reset notification.
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token): void
+    {
+        $this->notify(new \App\Notifications\ResetPasswordNotification($token));
     }
 }
