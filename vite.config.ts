@@ -11,7 +11,7 @@ export default defineConfig({
         host: '127.0.0.1',
 
         fs: {
-            allow: ['E:/WORKFORWORKS/PRODUCT/inthekostmadiun'],
+            allow: ['D:/laragon/www/inthekostmadiun'],
         },
     },
 

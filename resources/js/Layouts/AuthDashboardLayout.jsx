@@ -10,6 +10,9 @@ const roleConfig = {
         dashboard: 'admin.dashboard',
         menu: [
             { label: 'Dashboard', route: 'admin.dashboard', icon: 'dashboard' },
+            { label: 'Owner Management', route: 'admin.owners.index', icon: 'owners' },
+            { label: 'Surveyor', route: 'admin.surveyors.index', icon: 'users' },
+            { label: 'Checklist Survey', route: 'admin.survey-checklists.index', icon: 'checklist' },
         ],
     },
     owner: {
@@ -35,11 +38,21 @@ function Icon({ name, className = 'h-5 w-5' }) {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 13h8V3H3v10zm10 8h8V11h-8v10zM3 21h8v-6H3v6zm10-12h8V3h-8v6z" />
             </svg>
         ),
+        owners: (
+            <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+        ),
         users: (
             <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2" />
                 <circle cx="9" cy="7" r="4" />
                 <path strokeLinecap="round" strokeLinejoin="round" d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+            </svg>
+        ),
+        checklist: (
+            <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
             </svg>
         ),
     };
@@ -88,7 +101,7 @@ export default function AuthDashboardLayout({ header, children }) {
             >
                 {/* LOGO & DESKTOP TOGGLE BUTTON */}
                 <div className="flex h-16 shrink-0 items-center justify-between border-b border-border px-4">
-                    <Link 
+                    <Link
                         href={route(config.dashboard)}
                         className={`flex items-center gap-3 overflow-hidden ${isCollapsed ? 'justify-center w-full' : ''}`}
                     >
@@ -202,8 +215,8 @@ export default function AuthDashboardLayout({ header, children }) {
 
                             {/* BREADCRUMB */}
                             <div className="hidden items-center gap-2 text-sm text-muted lg:flex">
-                                <Link 
-                                    href={route(config.dashboard)} 
+                                <Link
+                                    href={route(config.dashboard)}
                                     className="font-medium text-body transition hover:text-heading"
                                 >
                                     {role === 'admin' ? 'Dashboard' : 'Beranda'}
@@ -211,16 +224,16 @@ export default function AuthDashboardLayout({ header, children }) {
 
                                 {header && (
                                     <>
-                                        <svg 
-                                            className="h-3.5 w-3.5 text-muted/40" 
-                                            fill="none" 
-                                            viewBox="0 0 24 24" 
-                                            stroke="currentColor" 
+                                        <svg
+                                            className="h-3.5 w-3.5 text-muted/40"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
                                             strokeWidth="2"
                                         >
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                                         </svg>
-                                        
+
                                         <span className="font-semibold text-heading">
                                             {header}
                                         </span>

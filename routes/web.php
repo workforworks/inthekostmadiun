@@ -25,6 +25,20 @@ Route::middleware(['auth', 'verified'])->group(function () {
             Route::get('/dashboard', function () {
                 return Inertia::render('Admin/Dashboard');
             })->name('dashboard');
+
+            // OWNER MANAGEMENT (ADM-008)
+            Route::patch('owners/{owner}/toggle-status', [\App\Http\Controllers\Admin\OwnerController::class, 'toggleStatus'])->name('owners.toggle-status');
+            Route::patch('owners/{owner}/verification', [\App\Http\Controllers\Admin\OwnerController::class, 'updateVerification'])->name('owners.update-verification');
+            Route::patch('owners/{owner}/account-status', [\App\Http\Controllers\Admin\OwnerController::class, 'updateAccountStatus'])->name('owners.update-account-status');
+            Route::resource('owners', \App\Http\Controllers\Admin\OwnerController::class)->only(['index', 'store']);
+
+            // SURVEYOR MANAGEMENT (SURVEY-005)
+            Route::patch('surveyors/{surveyor}/toggle-status', [\App\Http\Controllers\Admin\SurveyorController::class, 'toggleStatus'])->name('surveyors.toggle-status');
+            Route::resource('surveyors', \App\Http\Controllers\Admin\SurveyorController::class)->except(['create', 'edit', 'show']);
+
+            // SURVEY CHECKLIST MANAGEMENT (SURVEY-007)
+            Route::patch('survey-checklists/{survey_checklist}/toggle-status', [\App\Http\Controllers\Admin\SurveyChecklistController::class, 'toggleStatus'])->name('survey-checklists.toggle-status');
+            Route::resource('survey-checklists', \App\Http\Controllers\Admin\SurveyChecklistController::class)->except(['create', 'edit', 'show']);
         });
 
     // 4. OWNER AREA (Memakai Prefix URL)
