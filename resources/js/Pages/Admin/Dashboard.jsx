@@ -176,7 +176,7 @@ export default function DashboardAdmin() {
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                         <h1 className="text-2xl font-bold text-heading font-heading">
-                            Admin Dashboard 🛡️
+                            Admin Dashboard
                         </h1>
                         <p className="text-sm text-muted">
                             Pantau ringkasan statistik, aktivitas terbaru, dan notifikasi sistem Verified Kost Madiun.
